@@ -189,12 +189,20 @@ main {
   margin: 15px auto;
 }
 
-label, .result {
+label {
   font-family: var(--font-default);
   font-size: 17px;
   font-weight: normal;
   display: inline-block;
-  margin-bottom: 11px;
+  margin-top: 11px;
+}
+.result {
+  font-family: var(--font-default);
+  font-size: 12px;
+  font-weight: normal;
+  display: inline-block;
+  margin-bottom: 4px;
+  color: #fe142f;
 }
 input {
   padding: 8px;
@@ -202,12 +210,18 @@ input {
   outline: none;
 }
 .text-control {
-  margin: 0;
+  margin: 5px 0 0 0;
   padding: 8px;
-  width: 100%;
+  width: 160%;
   border-radius: 8px;
   font-size: 20px;
   height: 48px;
+}
+.text-control.combien {
+  width: 100%;
+}
+.text-control.date {
+  width: 201%;
 }
 .formData[data-error]::after {
   content: attr(data-error);
@@ -528,3 +542,12 @@ footer {
   }
 }
 
+input + p {
+  color: red;
+  font-size: 12px;
+  margin-top: -5px;
+  display:none;
+}
+input.invalid + p {
+  display: block;
+}

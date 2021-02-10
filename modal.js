@@ -31,7 +31,7 @@ const inputFirst = document.querySelector('input[name=first]');
 inputFirst.addEventListener('keyup', function(e) {
  var resultFirst = document.getElementById("first-validation");
 
-   var regFirst = /[a-zA-Z]{2,64}/;
+    var regFirst = /[a-zA-Z]{2,64}/;
     var value = e.target.value;
     if (value.match(regFirst)) {
       resultFirst.innerHTML = "";
