@@ -189,7 +189,7 @@ main {
   margin: 15px auto;
 }
 
-label {
+label, .result {
   font-family: var(--font-default);
   font-size: 17px;
   font-weight: normal;
@@ -198,14 +198,8 @@ label {
 }
 input {
   padding: 8px;
-  /*border: 0.8px solid #ccc;*/
+  border: 0.8px solid #ccc;
   outline: none;
-
-  margin: 0;
-  width: 100%;
-  border-radius: 8px;
-  font-size: 20px;
-  height: 48px;
 }
 .text-control {
   margin: 0;
@@ -534,12 +528,3 @@ footer {
   }
 }
 
-input + p {
-  color: red;
-  font-size: 12px;
-  margin-top: -5px;
-  display:none;
-}
-input.invalid + p {
-  display: block;
-}
