@@ -189,7 +189,7 @@ main {
   margin: 15px auto;
 }
 
-label, .result {
+label {
   font-family: var(--font-default);
   font-size: 17px;
   font-weight: normal;
@@ -528,3 +528,12 @@ footer {
   }
 }
 
+input + p {
+  color: red;
+  font-size: 12px;
+  margin-top: -5px;
+  display:none;
+}
+input.invalid + p {
+  display: block;
+}
