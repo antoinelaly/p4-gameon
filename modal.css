@@ -159,6 +159,7 @@ main {
 
 .bground {
   display: none;
+  /*display: block;*/
   position: fixed;
   z-index: 1;
   left: 0;
@@ -188,7 +189,7 @@ main {
   margin: 15px auto;
 }
 
-label {
+label, .result {
   font-family: var(--font-default);
   font-size: 17px;
   font-weight: normal;
