@@ -40,3 +40,28 @@ inputFirst.addEventListener('keyup', function(e) {
     }
 });
 
+const inputLast = document.querySelector('input[name=last]');
+inputLast.addEventListener('keyup', function(e) {
+ var resultLast = document.getElementById("last-validation");
+
+    var regLast = /[a-zA-Z]{2,64}/;
+    var value = e.target.value;
+    if (value.match(regLast)) {
+      resultLast.innerHTML = "";
+    } else {
+      resultLast.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    }
+});
+
+const inputEmail = document.querySelector('input[name=email]');
+inputEmail.addEventListener('keyup', function(e) {
+ var resultEmail = document.getElementById("email-validation");
+
+    var regEmail = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
+    var value = e.target.value;
+    if (value.match(regEmail)) {
+      resultEmail.innerHTML = "";
+    } else {
+      resultEmail.innerHTML = "Veuillez compléter le champ email.";
+    }
+});
