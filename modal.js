@@ -66,27 +66,44 @@ inputEmail.addEventListener('keyup', function(e) {
     }
 });
 
-var submit = document.getElementById("submit");
+const inputDate = document.querySelector('input[name=birthdate]');
+const inputQuant = document.querySelector('input[name=quantity]');
+const inputLocation = document.querySelector('input[name=location]');
+//var submit = document.getElementById("submit");
+const inputConditions = document.querySelector('input[name=conditions]');
 
-submit.onclick = function() {
+function functionValidation() {
   let resultFirst = document.getElementById("first-validation");
   let resultLast = document.getElementById("last-validation");
   let resultEmail = document.getElementById("email-validation");
+  let resultDate = document.getElementById("date-validation");
+  let resultQuant = document.getElementById("quant-validation");
+  let resultLocation = document.getElementById("location-validation");
+  let resultConditions = document.getElementById("conditions-validation");
 
   if (inputFirst.value.length == 0) {
-    resultFirst.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    resultFirst.innerHTML = "Merci de compléter ce champ";
+    return false;
+  } else if (inputLast.value.length == 0) {
+    resultLast.innerHTML = "Merci de compléter ce champ";
+    return false;
+  } else if (inputEmail.value.length == 0) {
+    resultEmail.innerHTML = "Merci de compléter ce champ";
+    return false;
+  } else if (inputDate.value.length == 0) {
+    resultDate.innerHTML = "Merci de compléter ce champ";
+    return false;
+  } else if (inputQuant.value.length == 0) {
+    resultQuant.innerHTML = "Merci de compléter ce champ";
+    return false;
+  } else if (inputLocation.checked = false) {
+    resultLocation.innerHTML = "Merci de compléter ce champ";
+    return false;
+  } else if (inputConditions.checked = false) {
+    resultConditions.innerHTML = "Merci de compléter ce champ";
+    return false;
   } else {
-    resultFirst.innerHTML = "";
-  };
-  if (inputLast.value.length == 0) {
-    resultLast.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-  } else {
-    resultLast.innerHTML = "";
-  };
-  if (inputEmail.value.length == 0) {
-    resultEmail.innerHTML = "Veuillez compléter l'adresse email";
-  } else {
-    resultEmail.innerHTML = "";
+    return true;
   };
 
 };
