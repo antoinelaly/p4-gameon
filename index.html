@@ -103,7 +103,10 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required
+                  data-message="Veuillez renseigner votre mot de passe" 
                 /></label>
+                <div class="result" id="date-validation"></div>
               </div>
               <div
                 class="formData">
@@ -114,7 +117,8 @@
                 id="quantity" 
                 name="quantity" 
                 min="0" 
-                max="99">
+                max="99"
+                required>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
@@ -204,6 +208,7 @@
               </div>
               <input
                 class="btn-submit button"
+                id="submit"
                 type="submit"
                 value="C'est parti"
               />

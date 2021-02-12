@@ -65,3 +65,14 @@ inputEmail.addEventListener('keyup', function(e) {
       resultEmail.innerHTML = "Veuillez compléter le champ email.";
     }
 });
+
+/*const inputeDate = document.querySelector('input[name=birthdate]');
+inputeDate.addEventListener('keyup', function(e) {
+
+leSubmit.addEventListener('click',()=>{
+    if(email.validity.typeMismatch){
+        email.setCustomValidity('Vous devez entrer votre date de naissance.');
+    }else{
+        email.setCustomValidity('');
+    }
+});*/
