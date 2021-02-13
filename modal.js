@@ -68,11 +68,11 @@ inputEmail.addEventListener('keyup', function(e) {
 
 const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
-const inputLocation = document.querySelector('input[name=location]');
+const inputLocations = document.querySelector('input[name=location]');
 //var submit = document.getElementById("submit");
 const inputConditions = document.querySelector('input[name=conditions]');
 
-function functionValidation() {
+function functionValidation(theForm) {
   let resultFirst = document.getElementById("first-validation");
   let resultLast = document.getElementById("last-validation");
   let resultEmail = document.getElementById("email-validation");
@@ -80,6 +80,7 @@ function functionValidation() {
   let resultQuant = document.getElementById("quant-validation");
   let resultLocation = document.getElementById("location-validation");
   let resultConditions = document.getElementById("conditions-validation");
+
 
   if (inputFirst.value.length == 0) {
     resultFirst.innerHTML = "Merci de compléter ce champ";
@@ -96,12 +97,14 @@ function functionValidation() {
   } else if (inputQuant.value.length == 0) {
     resultQuant.innerHTML = "Merci de compléter ce champ";
     return false;
-  } else if (inputLocation.checked = false) {
+  } else if (inputLocation.checked == false) {
     resultLocation.innerHTML = "Merci de compléter ce champ";
     return false;
-  } else if (inputConditions.checked = false) {
+
+  } else if (inputConditions.checked == false) {
     resultConditions.innerHTML = "Merci de compléter ce champ";
     return false;
+
   } else {
     return true;
   };
