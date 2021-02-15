@@ -70,7 +70,7 @@ const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
 //const inputLocations = document.querySelector('input[name=location]');
 //var submit = document.getElementById("submit");
-const inputConditions = document.getElementsByClassName("conditions");
+const inputConditions = document.querySelector('input[name=conditions]');
 
 function countLocations(){
   var elements = document.getElementsByClassName("location"),
@@ -113,7 +113,7 @@ function functionValidation(theForm) {
     resultLocation.innerHTML = "Merci de compléter ce champ";
     return false;
 
-  } else if (inputConditions.checked == null) {
+  } else if (inputConditions.checked == false) {
     resultConditions.innerHTML = "Merci de compléter ce champ";
     return false;
 
