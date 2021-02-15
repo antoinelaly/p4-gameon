@@ -53,6 +53,8 @@ inputLast.addEventListener('keyup', function(e) {
     }
 });
 
+document.getElementById("checkbox1").attributes["required"] = "";
+
 const inputEmail = document.querySelector('input[name=email]');
 inputEmail.addEventListener('keyup', function(e) {
  var resultEmail = document.getElementById("email-validation");
