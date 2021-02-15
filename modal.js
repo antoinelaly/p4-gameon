@@ -68,7 +68,7 @@ inputEmail.addEventListener('keyup', function(e) {
 
 const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
-const inputLocations = document.querySelector('input[name=location]');
+const inputLocations = document.querySelector('input[name=location]').elements;
 //var submit = document.getElementById("submit");
 const inputConditions = document.querySelector('input[name=conditions]');
 
@@ -97,7 +97,7 @@ function functionValidation(theForm) {
   } else if (inputQuant.value.length == 0) {
     resultQuant.innerHTML = "Merci de compléter ce champ";
     return false;
-  } else if (inputLocation.checked == false) {
+  } else if (inputLocations.checked == false) {
     resultLocation.innerHTML = "Merci de compléter ce champ";
     return false;
 
