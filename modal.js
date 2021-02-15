@@ -113,7 +113,7 @@ function functionValidation(theForm) {
     resultLocation.innerHTML = "Merci de compléter ce champ";
     return false;
 
-  } else if (inputConditions.checked == false) {
+  } else if (!inputConditions.checked) {
     resultConditions.innerHTML = "Merci de compléter ce champ";
     return false;
 
