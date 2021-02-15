@@ -84,7 +84,7 @@ function countLocations(){
   return count;
 }
 
-function functionValidation(theForm) {
+function functionValidation(form) {
   let resultFirst = document.getElementById("first-validation");
   let resultLast = document.getElementById("last-validation");
   let resultEmail = document.getElementById("email-validation");
