@@ -97,11 +97,11 @@ function functionValidation(theForm) {
   } else if (inputQuant.value.length == 0) {
     resultQuant.innerHTML = "Merci de compléter ce champ";
     return false;
-  } else if (inputLocations.checked == false) {
+  } else if (inputLocations.checked == null) {
     resultLocation.innerHTML = "Merci de compléter ce champ";
     return false;
 
-  } else if (inputConditions.checked == false) {
+  } else if (inputConditions.checked == null) {
     resultConditions.innerHTML = "Merci de compléter ce champ";
     return false;
 
