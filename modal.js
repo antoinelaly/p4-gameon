@@ -70,7 +70,7 @@ const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
 //const inputLocations = document.querySelector('input[name=location]');
 //var submit = document.getElementById("submit");
-const inputConditions = document.querySelector('input[name=conditions]');
+const inputConditions = document.getElementsByClassName("conditions");
 
 function countLocations(){
   var elements = document.getElementsByClassName("location"),
