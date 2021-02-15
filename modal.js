@@ -92,29 +92,33 @@ function functionValidation(form) {
   let resultConditions = document.getElementById("conditions-validation");
 
   if (inputFirst.value.length == 0) {
+    resultFirst.style.display = "inline-block";
     resultFirst.innerHTML = "Merci de compléter ce champ";
     return false;
   } else if (inputLast.value.length == 0) {
+    resultLast.style.display = "inline-block";
     resultLast.innerHTML = "Merci de compléter ce champ";
     return false;
   } else if (inputEmail.value.length == 0) {
+    resultEmail.style.display = "inline-block";
     resultEmail.innerHTML = "Merci de compléter ce champ";
     return false;
   } else if (inputDate.value.length == 0) {
+    resultDate.style.display = "inline-block";
     resultDate.innerHTML = "Merci de compléter ce champ";
     return false;
   } else if (inputQuant.value.length == 0) {
+    resultQuant.style.display = "inline-block";
     resultQuant.innerHTML = "Merci de compléter ce champ";
     return false;
   } else if (countLocations() == 0) {
+    resultLocation.style.display = "inline-block";
     resultLocation.innerHTML = "Merci de compléter ce champ";
     return false;
-
   } else if (!inputConditions.checked) {
+    resultConditions.style.display = "inline-block";
     resultConditions.innerHTML = "Merci de compléter ce champ";
-    console.log("Utilisateur connecté!");
     return false;
-
   } else {
     return true;
   };

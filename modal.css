@@ -200,7 +200,8 @@ label {
   font-family: var(--font-default);
   font-size: 12px;
   font-weight: normal;
-  display: inline-block;
+  display: none;
+  /*display: inline-block;*/
   margin-bottom: 4px;
   color: #fe142f;
 }
