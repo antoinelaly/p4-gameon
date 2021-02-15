@@ -68,9 +68,21 @@ inputEmail.addEventListener('keyup', function(e) {
 
 const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
-const inputLocations = document.querySelector('input[name=location]').elements;
+//const inputLocations = document.querySelector('input[name=location]');
 //var submit = document.getElementById("submit");
 const inputConditions = document.querySelector('input[name=conditions]');
+
+function countLocations(){
+  var elements = document.getElementsByClassName("location"),
+      i,
+      count = 0;
+  for (i = 0; i < elements.length; i++){
+      if (elements[i].checked){
+          count++;
+      }
+  }
+  return count;
+}
 
 function functionValidation(theForm) {
   let resultFirst = document.getElementById("first-validation");
@@ -97,7 +109,7 @@ function functionValidation(theForm) {
   } else if (inputQuant.value.length == 0) {
     resultQuant.innerHTML = "Merci de compléter ce champ";
     return false;
-  } else if (inputLocations.checked == null) {
+  } else if (countLocations() == 0) {
     resultLocation.innerHTML = "Merci de compléter ce champ";
     return false;
 
