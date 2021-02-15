@@ -68,9 +68,8 @@ inputEmail.addEventListener('keyup', function(e) {
 
 const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
-//const inputLocations = document.querySelector('input[name=location]');
-//var submit = document.getElementById("submit");
-const inputConditions = document.querySelector('input[name=conditions]');
+//const inputConditions = document.querySelector('input[name=conditions]');
+const inputConditions = document.getElementById("lechec checkbox1");
 
 function countLocations(){
   var elements = document.getElementsByClassName("location"),
@@ -92,7 +91,6 @@ function functionValidation(form) {
   let resultQuant = document.getElementById("quant-validation");
   let resultLocation = document.getElementById("location-validation");
   let resultConditions = document.getElementById("conditions-validation");
-
 
   if (inputFirst.value.length == 0) {
     resultFirst.innerHTML = "Merci de compléter ce champ";
