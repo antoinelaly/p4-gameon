@@ -77,15 +77,25 @@ inputEmail.addEventListener('keyup', function(e) {
     }
 });
 
-inputDate.addEventListener('keyup', function(e) {
-  var resultBirth = document.getElementById("birthdate");
-     var value = true;
-     if (value) {
+inputDate.addEventListener('change', function(e) {
+  var resultBirth = document.getElementById("date-validation");
+  if (inputDate.value.length > 0) {
       resultBirth.innerHTML = "";
       resultBirth.style.display = "none";
      } else {
       resultBirth.style.display = "inline-block";
-      resultBirth.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+      resultBirth.innerHTML = "Merci de compléter ce champ";
+     }
+ });
+
+ inputQuant.addEventListener('change', function(e) {
+  var resultQuant = document.getElementById("quant-validation");
+  if (inputQuant.value.length > 0) {
+    resultQuant.innerHTML = "";
+    resultQuant.style.display = "none";
+     } else {
+      resultQuant.style.display = "inline-block";
+      resultQuant.innerHTML = "Merci de compléter ce champ";
      }
  });
 
@@ -101,7 +111,8 @@ function countLocations(){
   return count;
 }
 
-function functionValidation(form) {
+
+function functionValidation() {
   let resultFirst = document.getElementById("first-validation");
   let resultLast = document.getElementById("last-validation");
   let resultEmail = document.getElementById("email-validation");
