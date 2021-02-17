@@ -137,7 +137,11 @@ inputConditions.addEventListener('change', e => {
 const form = document.getElementById("form");
 form.addEventListener("submit", e => {
   e.preventDefault();
-  functionValidation();
+
+  if (functionValidation() == true) {
+    closeForm();
+  } 
+
 });
 
  function functionValidation() {
@@ -151,43 +155,52 @@ form.addEventListener("submit", e => {
   let resultLocation = document.getElementById("location-validation");
   let resultConditions = document.getElementById("conditions-validation");
 
+  let inputCount = 0;
+
   if (inputFirst.value.length == 0) {
     resultFirst.style.display = "inline-block";
     resultFirst.innerHTML = "Merci de compléter ce champ.";
+    inputCount++;
   } 
   
   if (inputLast.value.length == 0) {
     resultLast.style.display = "inline-block";
     resultLast.innerHTML = "Merci de compléter ce champ.";
+    inputCount++;
   } 
   
   if (inputEmail.value.length == 0) {
     resultEmail.style.display = "inline-block";
     resultEmail.innerHTML = "Merci de compléter le champ email.";
+    inputCount++;
   } 
 
   if (inputDate.value.length == 0) {
     resultDate.style.display = "inline-block";
     resultDate.innerHTML = "Vous devez entrer votre date de naissance.";
+    inputCount++;
   } 
 
   if (inputQuant.value.length == 0) {
     resultQuant.style.display = "inline-block";
     resultQuant.innerHTML = "Vous devez choisir une option.";
+    inputCount++;
   } 
 
   if (countLocations() == 0) {
     resultLocation.style.display = "inline-block";
     resultLocation.innerHTML = "Vous devez choisir une option.";
+    inputCount++;
   } 
 
   if (!inputConditions.checked) {
     resultConditions.style.display = "inline-block";
     resultConditions.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
+    inputCount++;
   }  
 
-  else {
-    return true;
+  else if (inputCount == 0) {
+    closeForm();
   }
 
 };
