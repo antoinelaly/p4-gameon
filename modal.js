@@ -146,7 +146,6 @@ form.addEventListener("submit", e => {
 
  function functionValidation() {
 
-
   let resultFirst = document.getElementById("first-validation");
   let resultLast = document.getElementById("last-validation");
   let resultEmail = document.getElementById("email-validation");
