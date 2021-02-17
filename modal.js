@@ -199,7 +199,7 @@ form.addEventListener("submit", e => {
     inputCount++;
   }  
 
-  else if (inputCount == 0) {
+  else if (inputCount === 0) {
     closeForm();
   }
 
