@@ -32,6 +32,7 @@ const inputLast = document.querySelector('input[name=last]');
 const inputEmail = document.querySelector('input[name=email]');
 const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
+const inputLocation = document.querySelector('input[name=location]');
 const inputConditions = document.querySelector('input[name=conditions]');
 
 
@@ -100,17 +101,38 @@ inputDate.addEventListener('change', function(e) {
  });
 
 function countLocations(){
-  var elements = document.getElementsByClassName("location"),
+  var theLocation = document.getElementsByClassName("location"),
       i,
       count = 0;
-  for (i = 0; i < elements.length; i++){
-      if (elements[i].checked){
+  for (i = 0; i < theLocation.length; i++){
+      if (theLocation[i].checked){
           count++;
-      }
+      } 
   }
   return count;
-}
+};
 
+
+document.querySelectorAll('.location').forEach(item => {
+  item.addEventListener('change', e => {
+    let resultLocation = document.getElementById("location-validation");
+    if(e.target.checked){
+      resultLocation.innerHTML = "";
+      resultLocation.style.display = "none";
+    }
+  })
+});
+
+
+inputConditions.addEventListener('change', e => {
+  let resultConditions = document.getElementById("conditions-validation");
+
+    if(e.target.checked){
+      resultConditions.innerHTML = "";
+      resultConditions.style.display = "none";
+    }
+
+});
 
 function functionValidation() {
   let resultFirst = document.getElementById("first-validation");
