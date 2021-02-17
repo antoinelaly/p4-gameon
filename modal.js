@@ -134,8 +134,14 @@ inputConditions.addEventListener('change', e => {
 
 });
 
-function functionValidation(event) {
-  event.preventDefault();
+const form = document.getElementById("form");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  functionValidation();
+});
+
+ function functionValidation() {
+
 
   let resultFirst = document.getElementById("first-validation");
   let resultLast = document.getElementById("last-validation");
@@ -178,6 +184,10 @@ function functionValidation(event) {
   if (!inputConditions.checked) {
     resultConditions.style.display = "inline-block";
     resultConditions.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
-  } 
+  }  
+
+  else {
+    return true;
+  }
 
 };
