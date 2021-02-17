@@ -85,7 +85,7 @@ inputDate.addEventListener('change', function(e) {
       resultBirth.style.display = "none";
      } else {
       resultBirth.style.display = "inline-block";
-      resultBirth.innerHTML = "Merci de compléter ce champ";
+      resultBirth.innerHTML = "Vous devez entrer votre date de naissance.";
      }
  });
 
@@ -145,31 +145,31 @@ function functionValidation() {
 
   if (inputFirst.value.length == 0) {
     resultFirst.style.display = "inline-block";
-    resultFirst.innerHTML = "Merci de compléter ce champ";
+    resultFirst.innerHTML = "Merci de compléter ce champ.";
     return false;
   } else if (inputLast.value.length == 0) {
     resultLast.style.display = "inline-block";
-    resultLast.innerHTML = "Merci de compléter ce champ";
+    resultLast.innerHTML = "Merci de compléter ce champ.";
     return false;
   } else if (inputEmail.value.length == 0) {
     resultEmail.style.display = "inline-block";
-    resultEmail.innerHTML = "Merci de compléter ce champ";
+    resultEmail.innerHTML = "Merci de compléter le champ email.";
     return false;
   } else if (inputDate.value.length == 0) {
     resultDate.style.display = "inline-block";
-    resultDate.innerHTML = "Merci de compléter ce champ";
+    resultDate.innerHTML = "Vous devez entrer votre date de naissance.";
     return false;
   } else if (inputQuant.value.length == 0) {
     resultQuant.style.display = "inline-block";
-    resultQuant.innerHTML = "Merci de compléter ce champ";
+    resultQuant.innerHTML = "Vous devez choisir une option.";
     return false;
   } else if (countLocations() == 0) {
     resultLocation.style.display = "inline-block";
-    resultLocation.innerHTML = "Merci de compléter ce champ";
+    resultLocation.innerHTML = "Vous devez choisir une option.";
     return false;
   } else if (!inputConditions.checked) {
     resultConditions.style.display = "inline-block";
-    resultConditions.innerHTML = "Merci de compléter ce champ";
+    resultConditions.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
     return false;
   } else {
     return true;
