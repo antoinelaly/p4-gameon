@@ -74,7 +74,7 @@ inputEmail.addEventListener('keyup', function(e) {
       resultEmail.style.display = "none";
     } else {
       resultEmail.style.display = "inline-block";
-      resultEmail.innerHTML = "Veuillez compléter le champ email.";
+      resultEmail.innerHTML = "Vous devez choisir une adresse électronique est valide.";
     }
 });
 
@@ -134,15 +134,26 @@ inputConditions.addEventListener('change', e => {
 
 });
 
+function closeFormFinal() {
+  modalbg.style.display = "none";
+}
+
 const form = document.getElementById("form");
 form.addEventListener("submit", e => {
   e.preventDefault();
-
-  if (functionValidation() == true) {
-    closeForm();
-  } 
+  functionValidation();
 
 });
+
+function showNotification(){
+  
+  document.getElementById("note").style.display = "block";
+  setTimeout(function(){
+  
+    document.getElementById("note").style.display = "none";
+  
+  }, 3000);
+}
 
  function functionValidation() {
 
@@ -199,7 +210,8 @@ form.addEventListener("submit", e => {
   }  
 
   else if (inputCount === 0) {
-    closeForm();
-  }
+    closeFormFinal();
+    showNotification();
+  } 
 
 };
