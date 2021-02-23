@@ -34,25 +34,30 @@ const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
 const inputLocation = document.querySelector('input[name=location]');
 const inputConditions = document.querySelector('input[name=conditions]');
-// get all input
+// get all inputs
 
 
 inputFirst.addEventListener('keyup', function(e) {
+  // e is the short var reference for event object which will be passed to event handlers
+  // new style -> inputFirst.addEventListener("keyup", event => {
+  // The keyup event is fired when a key is released
+  // The event object essentially has lot of interesting methods and properties that can be used in the event handlers.
  var resultFirst = document.getElementById("first-validation");
  // get message area
     var regFirst = /[a-zA-Z]{2,64}/;
     // check if letters with a minimum of 2 characters
     var value = e.target.value;
-    
+    // it retrieves value of whatever input it was called on
     if (value.match(regFirst)) {
+    // specific to regExp, method searches a string for a match against a regular expression
       resultFirst.innerHTML = "";
+      // Change the HTML content of a Id #resultFirst to empty element 
       resultFirst.style.display = "none";
     } else {
       resultFirst.style.display = "inline-block";
       resultFirst.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     }
 });
-
 
 inputLast.addEventListener('keyup', function(e) {
  var resultLast = document.getElementById("last-validation");
@@ -66,8 +71,6 @@ inputLast.addEventListener('keyup', function(e) {
       resultLast.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     }
 });
-
-document.getElementById("checkbox1").attributes["required"] = "";
 
 inputEmail.addEventListener('keyup', function(e) {
  var resultEmail = document.getElementById("email-validation");
@@ -105,19 +108,25 @@ inputDate.addEventListener('change', function(e) {
  });
 
 function countLocations(){
+  // look at .location radio to find if one is checked or not
   var theLocation = document.getElementsByClassName("location"),
       i,
       count = 0;
   for (i = 0; i < theLocation.length; i++){
       if (theLocation[i].checked){
+        //Input Checkbox checked Property
           count++;
       } 
   }
   return count;
+  // have count value in the function 
 };
 
+document.getElementById("checkbox1").attributes["required"] = "";
+// "required" not usable in html
 
 document.querySelectorAll('.location').forEach(item => {
+  // an other methode to check if one button has been cheched 
   item.addEventListener('change', e => {
     let resultLocation = document.getElementById("location-validation");
     if(e.target.checked){
@@ -129,6 +138,7 @@ document.querySelectorAll('.location').forEach(item => {
 
 
 inputConditions.addEventListener('change', e => {
+  // new model of writing (funtion?)
   let resultConditions = document.getElementById("conditions-validation");
 
     if(e.target.checked){
@@ -138,27 +148,26 @@ inputConditions.addEventListener('change', e => {
 
 });
 
-function closeFormFinal() {
-
+/*function closeFormFinal() {
   modalbg.style.display = "none";
-
-}
+}*/
 
 const form = document.getElementById("form");
 form.addEventListener("submit", e => {
+  // submit event to be manage by JS
   e.preventDefault();
+  // method useful when Clicking on a "Submit" button, prevent it from submitting a form
   functionValidation();
-
+  // start function
 });
 
 function showNotification(){
   
   document.getElementById("note").style.display = "block";
   setTimeout(function(){
-  
     document.getElementById("note").style.display = "none";
-  
   }, 3000);
+  // close alert box after 3 seconds (3000 milliseconds)
 }
 
  function functionValidation() {
@@ -170,13 +179,17 @@ function showNotification(){
   let resultQuant = document.getElementById("quant-validation");
   let resultLocation = document.getElementById("location-validation");
   let resultConditions = document.getElementById("conditions-validation");
+  // target message area
 
   let inputCount = 0;
+  // create a variable of value 0
 
   if (inputFirst.value.length == 0) {
+  // to get the length of the string
     resultFirst.style.display = "inline-block";
     resultFirst.innerHTML = "Merci de compléter ce champ.";
     inputCount++;
+    // if length 0 inputCount 1
   } 
   
   if (inputLast.value.length == 0) {
@@ -204,12 +217,14 @@ function showNotification(){
   } 
 
   if (countLocations() == 0) {
+    // check location
     resultLocation.style.display = "inline-block";
     resultLocation.innerHTML = "Vous devez choisir une option.";
     inputCount++;
   } 
 
   if (!inputConditions.checked) {
+    // check conditions
     resultConditions.style.display = "inline-block";
     resultConditions.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
     inputCount++;
@@ -217,12 +232,13 @@ function showNotification(){
 
   else if (inputCount === 0) {
     // if counter empty
-    closeFormFinal();
+    //closeFormFinal();
+    modalbg.style.display = "none";
     // clode modale
     showNotification();
-    // setTimeout of 3000 on note
+    // open notification then close
     document.getElementById("form").reset();
-    // vider les contenus
+    // reset to have the inputs to be empty
   } 
 
 };
