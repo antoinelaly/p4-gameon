@@ -34,12 +34,16 @@ const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
 const inputLocation = document.querySelector('input[name=location]');
 const inputConditions = document.querySelector('input[name=conditions]');
+// get all input
 
 
 inputFirst.addEventListener('keyup', function(e) {
  var resultFirst = document.getElementById("first-validation");
+ // get message area
     var regFirst = /[a-zA-Z]{2,64}/;
+    // check if letters with a minimum of 2 characters
     var value = e.target.value;
+    
     if (value.match(regFirst)) {
       resultFirst.innerHTML = "";
       resultFirst.style.display = "none";
@@ -135,7 +139,9 @@ inputConditions.addEventListener('change', e => {
 });
 
 function closeFormFinal() {
+
   modalbg.style.display = "none";
+
 }
 
 const form = document.getElementById("form");
@@ -210,8 +216,13 @@ function showNotification(){
   }  
 
   else if (inputCount === 0) {
+    // if counter empty
     closeFormFinal();
+    // clode modale
     showNotification();
+    // setTimeout of 3000 on note
+    document.getElementById("form").reset();
+    // vider les contenus
   } 
 
 };
