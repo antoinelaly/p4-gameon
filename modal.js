@@ -20,6 +20,7 @@ closeBtn.forEach((close) => close.addEventListener("click", closeForm));
 
 // launch modal form
 function launchModal() {
+  document.getElementById("form").reset();
   modalbg.style.display = "block";
 }
 
@@ -64,7 +65,7 @@ inputLast.addEventListener('keyup', function(e) {
     var regLast = /[a-zA-Z]{2,64}/;
     var value = e.target.value;
     if (value.match(regLast)) {
-      resultLast.innerHTML = "";
+      //resultLast.innerHTML = "";
       resultLast.style.display = "none";
     } else {
       resultLast.style.display = "inline-block";
@@ -72,13 +73,14 @@ inputLast.addEventListener('keyup', function(e) {
     }
 });
 
+var resultEmail = document.getElementById("email-validation"); 
 inputEmail.addEventListener('keyup', function(e) {
- var resultEmail = document.getElementById("email-validation");
+ // top JS !!
     var regEmail = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
     var value = e.target.value;
     if (value.match(regEmail)) {
-      resultEmail.innerHTML = "";
-      resultEmail.style.display = "none";
+      //resultEmail.innerHTML = "";
+      resultEmail.style.display = "none"; // function !!
     } else {
       resultEmail.style.display = "inline-block";
       resultEmail.innerHTML = "Vous devez choisir une adresse électronique est valide.";
@@ -237,7 +239,7 @@ function showNotification(){
     // clode modale
     showNotification();
     // open notification then close
-    document.getElementById("form").reset();
+    //document.getElementById("form").reset();
     // reset to have the inputs to be empty
   } 
 
