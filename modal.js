@@ -41,16 +41,14 @@ closeBtn.forEach((close) => close.addEventListener("click", closeForm));
 function launchModal() {
   document.getElementById("form").reset();
   modalbg.style.display = "block";
-}
-
-function closeForm() {
-  resultClass.style.display = "none";
-  modalbg.style.display = "none";
 
   document.querySelectorAll('.result').forEach(item => {
     item.style.display = "none";
-    })
+  });
+}
 
+function closeForm() {
+  modalbg.style.display = "none";
 }
 
 function displayNone(e) {
@@ -200,7 +198,7 @@ function showNotification(){
   }  
 
   else if (inputCount === 0) {
-    //closeFormFinal();
+    //closeFormFinal
     modalbg.style.display = "none";
     showNotification();
     document.getElementById("form").reset();
