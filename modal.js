@@ -13,13 +13,13 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelectorAll(".close");
 
-const inputFirst = document.querySelector('input[id=first]');
-const inputLast = document.querySelector('input[id=last]');
-const inputEmail = document.querySelector('input[id=email]');
-const inputDate = document.querySelector('input[id=birthdate]');
-const inputQuant = document.querySelector('input[id=quantity]');
-const inputLocation = document.querySelector('input[id=location]');
-const inputConditions = document.querySelector('input[id=conditions]');
+const inputFirst = document.querySelector('input[name=first]');
+const inputLast = document.querySelector('input[name=last]');
+const inputEmail = document.querySelector('input[name=email]');
+const inputDate = document.querySelector('input[name=birthdate]');
+const inputQuant = document.querySelector('input[name=quantity]');
+const inputLocation = document.querySelector('input[name=location]');
+const inputConditions = document.querySelector('input[name=conditions]');
 // get all inputs
 
 let resultFirst = document.getElementById("first-validation");
