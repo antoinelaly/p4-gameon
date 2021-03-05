@@ -15,6 +15,7 @@ const closeBtn = document.querySelectorAll(".close");
 
 const form = document.getElementById("form");
 
+// get all inputs
 const inputFirst = document.querySelector('input[name=first]');
 const inputLast = document.querySelector('input[name=last]');
 const inputEmail = document.querySelector('input[name=email]');
@@ -22,8 +23,8 @@ const inputDate = document.querySelector('input[name=birthdate]');
 const inputQuant = document.querySelector('input[name=quantity]');
 const inputLocation = document.querySelector('input[name=location]');
 const inputConditions = document.querySelector('input[name=conditions]');
-// get all inputs
 
+// id
 let resultFirst = document.getElementById("first-validation");
 let resultLast = document.getElementById("last-validation");
 let resultEmail = document.getElementById("email-validation"); 
@@ -32,6 +33,9 @@ let resultQuant = document.getElementById("quant-validation");
 let resultLocation = document.getElementById("location-validation");
 let resultConditions = document.getElementById("conditions-validation");
 
+var resultDate = document.getElementById("date-validation");
+
+// count++
 const resultClass = document.querySelector(".result");
 
 // launch modal event
@@ -147,7 +151,7 @@ inputConditions.addEventListener('change', e => {
     }
 });
 
-// bouton
+// bouton 
 form.addEventListener("submit", e => {
   e.preventDefault();
   functionValidation();
@@ -163,8 +167,6 @@ function showNotification(){
 }
 
  function functionValidation() {
-
-  let resultDate = document.getElementById("date-validation");
 
   let inputCount = 0;
   // initialisation du compteur
